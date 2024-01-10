@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+    let root =document.getElementById('root');
+
+    let arreglo = [
+        { 
+            img: 'fotos/hamburguesa-1.webp',
+            h1:'BQ Crunch',
+            h2: '$8.900',
+            p:'1 sandwich BBQ (1 Filete de pollo apanado)'
+        },
+        { 
+            img:'fotos/hamburguesa-2.webp',
+            h1:'Kentucky Sandwich',
+            h2:'$15.900',
+            p:'1 Kentucky hamburguesa / Sandwich 1 Filete de pechuga de pollo apanado,pepinillos...'
+        },
+        { 
+            img:'fotos/hamburguesa-3.webp',
+            h1:'Combo BBQ Crunch',
+            h2:'$15.900',
+            p:'Sandwich BBQ Crunch (1Filete de pollo apanado) + 1 Papa Pequeña + 1 Gaseosa PET...'
+        },
+        {
+            img: 'fotos/hamburguesa-4.webp',
+            h1:'Kentucky Coronel Sandwich',
+            h2:'$16.900',
+            p:'Kentucky Coronel hamburguesa / Sandwich 1 Filete de pechuga de pollo apanado, Ensalada...'
+        },
+        { 
+            img:'fotos/hamburguesa-5.webp',
+            h1:'Combo Kentcky Sandwich',
+            h2:'$21.900',
+            p:'Kentucky y hamburguesa / Sandwich 1 Filete de pechuga de pollo apanado, pepinillos...'
+        },
+        { 
+            img:'fotos/hamburguesa-6.webp',
+            h1:'Combo Kentucky Coronel Sandwich',
+            h2:'$22.900',
+            p:'Kentucky Coronel hamburguesa / Sandwich 1 Filete de pechuga de pollo, Ensalada...'
+        },
+        {
+            img:'fotos/hamburguesa-7.webp',
+            h1:'Sandwich Crispy BBQ',
+            h2:'$23.900',
+            p:'Sandwich crispy BBQ 1 Filete de pechuga extra grande, triple empanizado, Cebolla crisp...'
+        },
+        {
+            img:'fotos/hamburguesa-8.webp',
+            h1:'Combo sandwich Crispy BBQ',
+            h2:'$23.900',
+            p:'1 Sandwich crispy BBQ 1 Filete de pechuga extra grande, triple empanizado , cebolla crisp...'
+        }
+    ]
+
+
+    //container
+    let container = document.createElement('div');
+    container.classList.add("container");
+    root.appendChild(container);
+
+    //row
+    let row = document.createElement('div');
+    row.classList.add("row");
+    container.appendChild(row);
+
+    arreglo.forEach(function (elemento){
+        //columna
+        let col= document.createElement("div");
+        col.classList.add("col-md-3");
+        row.appendChild(col);
+
+        //card
+        let card = document.createElement("div");
+        card.classList.add("card");
+        col.appendChild(card);
+
+        let img =document.createElement('img');
+        img.classList.add("img-burguer");
+        img.setAttribute("src", elemento.img),
+        card.appendChild(img);
+
+        let h1=document.createElement("h1");
+        h1.innerText=elemento.h1;
+        card.appendChild(h1);
+
+        let h2=document.createElement("h2");
+        h2.innerText=elemento.h2;
+        card.appendChild(h2);
+
+        let p=document.createElement("p");
+        p.innerText=elemento.p;
+        card.appendChild(p);
+
+        let btn=document.createElement("button")
+        btn.classList.add("btn");
+        btn.classList.add("btn-danger");
+        btn.innerText="Comprar";
+        card.appendChild(btn);
+    })
+
+    </script>
+</body>
+</html>
